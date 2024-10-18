@@ -1,13 +1,11 @@
 #include "Base.h"
 #include<iostream>
 using namespace std;
-Base::Base()
-{
-	people_base = 30; 
-	vehicles_base = 5;
-	petrol_base = 1000;
-	goods_base = 100;
-}
+
+double Base::goods_base = 0;
+double Base::petrol_base = 0;
+int Base::people_base = 0;
+int Base::vehicles_base = 0;
 
 Base::Base(int p, int v, double petr, double g)
 {
@@ -22,7 +20,6 @@ void Base::Print()
 	cout << "People on base: " << people_base
 		<< endl << "Vehicles on base: " << vehicles_base
 		<< endl << "Petrol on base: " << petrol_base
-		<< endl << "Goods on base: " << goods_base;
+		<< endl << "Goods on base: " << goods_base << endl;
 }
 
-double Base::goods_base = 0;

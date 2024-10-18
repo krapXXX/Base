@@ -9,5 +9,5 @@ public:
 	int getPeopleCount();
 	int getMaxPeople();
 	void arrive();
-	void leave();
+	bool leave();
 };

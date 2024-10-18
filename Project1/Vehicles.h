@@ -9,5 +9,5 @@ public:
 	double getTankVolume();
 	double getPetrolAmount();
 	void arrive();
-	void leave();
+	bool leave();
 };

@@ -6,8 +6,6 @@ public:
 	static int vehicles_base;
 	static double petrol_base;
 	static double goods_base;
-
-	Base();
 	Base(int p, int v, double petr, double g);
 	void Print();
 };

@@ -9,5 +9,5 @@ public:
 	double getCurrentGoods();
 	double getMaxGoods();
 	void arrive();
-	void leave();
+	bool leave();
 };

@@ -18,12 +18,19 @@ int Bus::getMaxPeople()
 
 void Bus::arrive()
 {
-	Base::people_base += people;
+	Base::people_base += getPeopleCount();
 	Base::vehicles_base += 1;
 }
 
-void Bus::leave()
+bool Bus::leave()
 {
-	Vehicle::leave();
-	Base::people_base -= max_people;
+	if (Vehicle::leave())
+	{
+		Base::people_base -= getMaxPeople();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

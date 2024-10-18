@@ -20,11 +20,18 @@ void Truck::arrive()
 {
 	Base::people_base += 1;
 	Base::vehicles_base += 1;
-	Base::goods_base += goods;
+	Base::goods_base += getCurrentGoods();
 }
 
-void Truck::leave()
+bool Truck::leave()
 {
-	Vehicle::leave();
-	Base::goods_base -= max_goods;
+	if (Vehicle::leave()) 
+	{
+		Base::goods_base -= getMaxGoods();
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
 }

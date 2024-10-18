@@ -22,7 +22,7 @@ void Vehicle::arrive()
 	Base::vehicles_base+=1;
 }
 
-void Vehicle::leave()
+bool Vehicle::leave()
 {
 	if (Base::petrol_base + petrol_amount >= tank_volume)
 	{
@@ -30,6 +30,7 @@ void Vehicle::leave()
 		Base::people_base -= 1;
 		Base::vehicles_base -= 1;
 		petrol_amount = tank_volume;
+		return true;
 	}
 	else
 	{
@@ -37,5 +38,6 @@ void Vehicle::leave()
 		Base::people_base -= 1;
 		Base::vehicles_base -= 1;
 		petrol_amount += Base::petrol_base;
+		return false;
 	}
 }
