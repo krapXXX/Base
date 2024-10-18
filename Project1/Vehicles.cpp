@@ -18,22 +18,24 @@ double Vehicle::getPetrolAmount()
 
 void Vehicle::arrive()
 {
-	people_base+=1;
-	vehicles_base+=1;
-	petrol_base+=petrol_amount;
+	Base::people_base+=1;
+	Base::vehicles_base+=1;
 }
 
-bool Vehicle::leave()
+void Vehicle::leave()
 {
-	if (petrol_base + petrol_amount >= tank_volume)
+	if (Base::petrol_base + petrol_amount >= tank_volume)
 	{
-		petrol_base -= tank_volume - petrol_amount;
-		people_base -= 1;
-		vehicles_base -= 1;
+		Base::petrol_base -= tank_volume - petrol_amount;
+		Base::people_base -= 1;
+		Base::vehicles_base -= 1;
 		petrol_amount = tank_volume;
 	}
 	else
 	{
-		return false;
+		Base::petrol_base -= tank_volume - petrol_amount;
+		Base::people_base -= 1;
+		Base::vehicles_base -= 1;
+		petrol_amount += Base::petrol_base;
 	}
 }
